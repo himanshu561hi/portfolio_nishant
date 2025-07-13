@@ -16,7 +16,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="section-padding bg-secondary/30">
       <div className="container mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -28,8 +28,8 @@ const ProjectsSection = () => {
             A selection of my most recent and impactful work across different creative disciplines.
           </p>
         </motion.div>
-        
-        {/* <motion.div 
+
+        <motion.div
           className="flex flex-wrap justify-center gap-4 mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,17 +40,16 @@ const ProjectsSection = () => {
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                filter === category
-                  ? 'bg-primary text-white'
-                  : 'bg-background hover:bg-secondary'
-              }`}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${filter === category
+                ? 'bg-primary text-white'
+                : 'bg-background hover:bg-secondary'
+                }`}
             >
               {category}
             </button>
           ))}
-        </motion.div> */}
-        
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <motion.div

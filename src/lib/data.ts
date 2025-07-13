@@ -1,62 +1,60 @@
+import { Description } from "@radix-ui/react-toast";
+
 export const projects = [
   {
     id: 1,
-    title: "ADEN PROJECT ED1TZ",
+    title: "Aden Editz Project",
+    description: "Complete visual identity including logo, color palette, typography, and brand guidelines.",
     category: "VIDEO EDITING",
-    // description: "Complete visual identity including logo, color palette, typography, and brand guidelines.",
-    image: "",
-    // tags: ["Branding", "Logo Design", "Typography"],
+    image: "/project images/a.png",
+    tags: ["Branding", "Logo Design", "Typography"],
     driveLink: "https://drive.google.com/file/d/1ncQCjfm93NRhCvEHGLgBGr18Nvy_kd1_/view?usp=drive_link"
   },
   {
     id: 2,
     title: "FinFlow Project",
-    category: "VIDEO EDITING",
     description: "",
-    // tags: ["Video Editing", "Motion Graphics", "Sound Design"],
-    driveLink: "https://drive.google.com/file/d/10bW7lmv-ZNCcJxUxF9rEU70VlVbYK4wb/view?usp=drive_link"
-  
+    category: "VIDEO EDITING",
+    image: "/project images/b.png",
+    tags: ["Video Editing", "Motion Graphics", "Sound Design"],
+    driveLink: "https://drive.google.com/file/d/10bW7lmv-ZNCcJxUxF9rEU70VlVbYK4wb/view?usp=drive_link",
   },
   {
     id: 3,
-    title: "Navan Project",
+    title: "Lalit Modi Podcast: Quick Review in 40 Seconds",
+    description: "Comprehensive UI design for fashion e-commerce platform with focus on user experience.",
     category: "VIDEO EDITING",
-    // description: "Comprehensive UI design for fashion e-commerce platform with focus on user experience.",
-    image: "htps://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    // tags: ["UI Design", "UX/", "E-commerce"],
+    image: "/project images/c.png",
+    tags: ["UI Design", "UX/", "E-commerce"],
     driveLink: "https://drive.google.com/file/d/19TEe9chuPBhOrkiB2ZCcSwRmBiBrTriY/view?usp=drive_link"
-  
+  },
+  {
+    id: 4,
+    title: "Documentary Film Editing",
+    description: "Editing and color grading for 30-minute documentary on environmental conservation.",
+    category: "VIDEO EDITING",
+    image: "/project images/a.png",
+    tags: ["Video Editing", "Color Grading", "Documentary"],
+    driveLink: "https://drive.google.com/drive/folders/1q4UwiD_qPbhZeH5xzWjXA17njw3LD4xD"
+  },
+  {
+    id: 5,
+    title: "Delhi Metro: This trick make crore",
+    category: "",
+    description: "Series of engaging posts and stories designed for cross-platform social media campaign.",
+    image: "/project images/b.png",
+    tags: ["Social Media", "Graphic Design", "Campaign"],
+    driveLink: "https://drive.google.com/file/d/13QOzGM-rZv_bn8Wt__qstJQNl-qpTl_r/view"
+  },
+  {
+    id: 6,
+    title: "Corporate Video Series",
+    category: "VIDEO EDITING",
+    description: "Set of training and promotional videos with consistent branding for corporate client.",
+    image: "/p6.png",
+    tags: ["Corporate Video", "Training", "Promotional"],
+    driveLink: "https://drive.google.com/drive/folders/1q4UwiD_qPbhZeH5xzWjXA17njw3LD4xD"
   }
-  // {
-  //   id: 4,
-  //   title: "Documentary Film Editing",
-  //   category: "VIDEO EDITING",
-  //   description: "Editing and color grading for 30-minute documentary on environmental conservation.",
-  //   image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-  //   tags: ["Video Editing", "Color Grading", "Documentary"],
-  //   driveLink: "https://drive.google.com/drive/folders/1q4UwiD_qPbhZeH5xzWjXA17njw3LD4xD"
-  
-  // },
-  // {
-  //   id: 5,
-  //   title: "Social Media Campaign",
-  //   category: "VIDEO EDITING",
-  //   description: "Series of engaging posts and stories designed for cross-platform social media campaign.",
-  //   image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-  //   tags: ["Social Media", "Graphic Design", "Campaign"],
-  //   driveLink: "https://drive.google.com/file/d/1ncQCjfm93NRhCvEHGLgBGr18Nvy_kd1_/view?usp=drive_link"
-  
-  // },
-  // {
-  //   id: 6,
-  //   title: "Corporate Video Series",
-  //   category: "VIDEO EDITING",
-  //   description: "Set of training and promotional videos with consistent branding for corporate client.",
-  //   image: "https://images.unsplash.com/photo-1635399860845-02e443b4caa2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-  //   tags: ["Corporate Video", "Training", "Promotional"],
-  //   driveLink: "https://drive.google.com/drive/folders/1q4UwiD_qPbhZeH5xzWjXA17njw3LD4xD"
-  
-  // }
 ];
 
 export const experience = [
