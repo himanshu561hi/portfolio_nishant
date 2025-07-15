@@ -1,6 +1,7 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react'; // Using a more appropriate icon
 
+// IMPROVEMENT: Removed the optional 'onViewDetails' prop as it's no longer needed.
 interface ProjectCardProps {
   project: {
     id: number;
@@ -9,69 +10,70 @@ interface ProjectCardProps {
     description: string;
     image: string;
     tags: string[];
+    driveLink: string;
   };
-  onViewDetails?: () => void; // Add this prop
 }
 
-const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
+const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <motion.div 
-      className="group relative overflow-hidden rounded-xl bg-background shadow-md hover:shadow-xl transition-all duration-300"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
+    <motion.div
+      className="group relative flex flex-col h-full overflow-hidden rounded-xl bg-background shadow-md hover:shadow-xl transition-all duration-300"
       whileHover={{ y: -5 }}
+      layout
     >
+      {/* --- Image Container --- */}
       <div className="aspect-video overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
         />
       </div>
-      
-      <div className="p-6">
-        <span className="text-xs font-medium text-primary mb-2 block">
-          {project.category}
-        </span>
-        
-        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-          {project.title}
-        </h3>
-        
-        {/* <p className="text-muted-foreground mb-4">
-          {project.description}
-        </p> */}
-        
-        {/* <div className="flex flex-wrap gap-2">
+
+      {/* --- Content Container --- */}
+      <div className="p-5 md:p-6 flex flex-col flex-grow">
+        <div className="flex-grow">
+          <span className="text-xs font-semibold text-primary mb-2 block">
+            {project.category}
+          </span>
+          <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+            {project.title}
+          </h3>
+          <p className="text-muted-foreground text-sm line-clamp-3">
+            {project.description}
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2 pt-4 mt-auto">
           {project.tags.map((tag, index) => (
-            <span 
-              key={index} 
-              className="text-xs bg-secondary px-3 py-1 rounded-full"
+            <span
+              key={index}
+              className="text-xs bg-muted px-3 py-1 rounded-full font-medium"
             >
               {tag}
             </span>
           ))}
-        </div> */}
-      </div>
-      
-      <motion.div 
-        className="absolute inset-0 bg-primary/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isHovered ? 1 : 0 }}
-      >
-        <div className="text-center p-6">
-          <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-          {/* <p className="text-white/80 mb-6">{project.description}</p> */}
-          <a href={project.driveLink}><button
-            className="inline-block bg-white text-primary font-medium py-2 px-6 rounded-full hover:bg-white/90 transition-colors"
-            onClick={onViewDetails}
-          >
-            View Details
-          </button></a>
         </div>
-      </motion.div>
+      </div>
+
+      {/* --- Hover Overlay --- */}
+      <div
+        className="absolute inset-0 bg-background/70 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <div className="text-center">
+          {/* FIX: This is now an `<a>` tag that links directly to the project. */}
+          <a
+            href={project.driveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-105 hover:bg-primary/90 transition-all"
+            // Stop propagation to prevent any parent click handlers from firing if they exist.
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ExternalLink size={20} />
+            View Project
+          </a>
+        </div>
+      </div>
     </motion.div>
   );
 };
