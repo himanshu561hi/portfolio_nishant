@@ -36,17 +36,17 @@ const AboutSection = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">About Me</h2>
             <div className="space-y-4 text-base md:text-lg text-muted-foreground">
-                <p>
-                  I'm a passionate creative professional with over 5 years of experience in graphic design and video editing.
-                  My work focuses on creating visually compelling content that communicates effectively and engages audiences.
-                </p>
-                <p>
-                  With a background in both commercial and artistic projects, I bring a versatile skill set and a keen eye
-                  for detail to every project. I'm committed to delivering high-quality work that exceeds client expectations
-                  and achieves strategic goals.
-                </p>
+              <p>
+                I'm a passionate creative professional with over 6+ years of experience in graphic design and video editing.
+                My work focuses on creating visually compelling content that communicates effectively and engages audiences.
+              </p>
+              <p>
+                With a background in both commercial and artistic projects, I bring a versatile skill set and a keen eye
+                for detail to every project. I'm committed to delivering high-quality work that exceeds client expectations
+                and achieves strategic goals.
+              </p>
             </div>
-            
+
             {/* --- Stats --- */}
             {/* IMPROVEMENT: The grid is now more responsive for very small screens. */}
             <div className="grid grid-cols-2 gap-4 mt-8">
@@ -62,7 +62,7 @@ const AboutSection = () => {
                 value="500+"
                 subtext="Worldwide"
               />
-               <StatCard
+              <StatCard
                 icon={<GraduationCap size={20} className="text-primary mr-2" />}
                 // FIX: Removed <br /> tag for better responsive text flow.
                 title="Education"
@@ -71,7 +71,7 @@ const AboutSection = () => {
               />
             </div>
           </div>
-          
+
           {/* --- Skills Section (Right) --- */}
           <div>
             <h3 className="text-2xl md:text-3xl font-bold font-display mb-6">Skills & Expertise</h3>
@@ -79,7 +79,7 @@ const AboutSection = () => {
             <SkillsDisplay skills={skills} />
           </div>
         </motion.div>
-        
+
         {/* --- Services Section (Optional) --- */}
         {/* I've kept this commented out pending your confirmation. */}
 

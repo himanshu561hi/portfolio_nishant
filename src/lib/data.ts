@@ -1,98 +1,108 @@
-import { Description } from "@radix-ui/react-toast";
-
 export const projects = [
   {
     id: 1,
-    title: "Aden Editz Project",
-    description: "Complete visual identity including logo, color palette, typography, and brand guidelines.",
-    category: "VIDEO EDITING",
-    image: "/project images/a.png",
+    title: "How Alex Hormozi Beat the Algorithm 🤯",
+    description:
+      "Alex Hormozi is dominating social media algorithms by consistently pushing high-volume content. Here’s my breakdown of his strategy—and how you can do it too.",
+    category: "Video Editing",
+    image: "/public/project images/aden-editz-best.png",
     tags: ["Branding", "Logo Design", "Typography"],
-    driveLink: "https://drive.google.com/file/d/1ncQCjfm93NRhCvEHGLgBGr18Nvy_kd1_/view?usp=drive_link"
+    driveLink:
+      "https://drive.google.com/file/d/1ncQCjfm93NRhCvEHGLgBGr18Nvy_kd1_/view?usp=drive_link",
   },
   {
     id: 2,
-    title: "FinFlow Project",
-    description: "",
-    category: "VIDEO EDITING",
-    image: "/project images/b.png",
+    title: "How Thin Air Became India’s Most Valuable Real Estate 💰",
+    description:
+      "Thin air is being treated like a tradable asset—legally. Here's how this overlooked loophole is turning into a financial opportunity.",
+    category: "Video Editing",
+    image: "/public/project images/Finflow.png",
     tags: ["Video Editing", "Motion Graphics", "Sound Design"],
-    driveLink: "https://drive.google.com/file/d/10bW7lmv-ZNCcJxUxF9rEU70VlVbYK4wb/view?usp=drive_link",
+    driveLink:
+      "https://drive.google.com/file/d/10bW7lmv-ZNCcJxUxF9rEU70VlVbYK4wb/view?usp=drive_link",
   },
   {
     id: 3,
-    title: "Lalit Modi Podcast: Quick Review in 40 Seconds",
-    description: "Comprehensive UI design for fashion e-commerce platform with focus on user experience.",
-    category: "VIDEO EDITING",
-    image: "/project images/c.png",
-    tags: ["UI Design", "UX/", "E-commerce"],
-    driveLink: "https://drive.google.com/file/d/19TEe9chuPBhOrkiB2ZCcSwRmBiBrTriY/view?usp=drive_link"
+    title: "Why Creators Are Launching Businesses Instead of Relying on Brand Deals",
+    description:
+      "More creators are shifting from brand deals to launching their own businesses. This project explains the reasoning and the real monetization strategies behind it.",
+    category: "Video Editing",
+    image: "/public/project images/1.png",
+    tags: ["UI Design", "UX", "E-commerce"],
+    driveLink:
+      "https://drive.google.com/file/d/19PjtFAlXT9QIh5CZ22iOt33PUz-SNFsE/view?usp=drive_link",
   },
   {
     id: 4,
-    title: "Documentary Film Editing",
-    description: "Editing and color grading for 30-minute documentary on environmental conservation.",
-    category: "VIDEO EDITING",
-    image: "/project images/a.png",
+    title: "Is Airbnb a Truly Passive Business? 🏠",
+    description:
+      "Managing an Airbnb might sound easy, but it's not always hands-off. This documentary-style edit explores how automation can help make it passive.",
+    category: "Video Editing",
+    image: "/public/project images/Ascogent-final-sample.png",
     tags: ["Video Editing", "Color Grading", "Documentary"],
-    driveLink: "https://drive.google.com/drive/folders/1q4UwiD_qPbhZeH5xzWjXA17njw3LD4xD"
+    driveLink:
+      "https://drive.google.com/file/d/1gcGpET5fyVabht414AmI_tjEtfCMIDGt/view?usp=sharing",
   },
   {
     id: 5,
-    title: "Delhi Metro: This trick make crore",
-    category: "",
-    description: "Series of engaging posts and stories designed for cross-platform social media campaign.",
-    image: "/project images/b.png",
+    title: "Why Your Audience Doesn’t Care About Every Scientific Detail 🤔",
+    description:
+      "Effective communication is all about clarity and impact. This project breaks down why simplifying complex ideas is more powerful than overloading with details.",
+    category: "Content Strategy",
+    image: "/public/project images/luis-final.png",
     tags: ["Social Media", "Graphic Design", "Campaign"],
-    driveLink: "https://drive.google.com/file/d/13QOzGM-rZv_bn8Wt__qstJQNl-qpTl_r/view"
+    driveLink:
+      "https://drive.google.com/file/d/10hBvdutEw4gTXX2sPjQby3w3wDsXhflc/view?usp=sharing",
   },
   {
     id: 6,
-    title: "Corporate Video Series",
-    category: "VIDEO EDITING",
-    description: "Set of training and promotional videos with consistent branding for corporate client.",
-    image: "/p6.png",
+    title: "3 Trading Books Every Trader Should Read",
+    description:
+      "Created a set of training and promotional videos with consistent branding, aimed at financial education and audience engagement.",
+    category: "Video Editing",
+    image: "/public/project images/new-trade-3rd-final.png",
     tags: ["Corporate Video", "Training", "Promotional"],
-    driveLink: "https://drive.google.com/drive/folders/1q4UwiD_qPbhZeH5xzWjXA17njw3LD4xD"
-  }
+    driveLink:
+      "https://drive.google.com/file/d/11yuvwSRhB13q-VRFZdV_zBHJhm6WfDmH/view?usp=sharing",
+  },
 ];
 
 export const experience = [
   {
     id: 1,
-    role: "🎬 Freelance Video Editor",
-    company: "Self-Employed",
-    period: "2019 - Present",
-    description: "Remote / Client-based Projects",
+    role: "Video Editor",
+    company: "Circle Pe",
+    period: "Dec 2024 – Present",
+    description: "Full-time editor responsible for creating promotional and commercial videos for national brands.",
     achievements: [
-      "Expertise in tools like Adobe Premiere Pro, After Effects and DaVinci Resolve.",
-      "LWorked closely with content creators, brands, and marketing teams to bring their vision to life through engaging and professional edits",
-      "Specialized in storytelling, color grading, motion graphics, transitions, and audio-video sync."
+      "Manage complete post-production workflow—from rough cuts to final delivery, including color grading and sound design.",
+      "Contribute actively to content strategy and creative direction by pitching concepts and enhancing narrative quality."
     ]
   },
   {
     id: 2,
-    role: "Video Editor",
-    company: "Circle Pe",
-    period: "Dec 2024 - Present",
-    description: "Edited commercial and promotional videos for national brands, handling all aspects from rough cut to final color grading and delivery.",
+    role: "Freelance Video Editor",
+    company: "Self-Employed",
+    period: "2019 – Dec 2024",
+    description: "Remote | Client-Based Projects",
     achievements: [
-      "Currently working full-time as a video editor, responsible for end-to-end video production—from raw footage to final exports.",
-      "Actively contribute to content strategy, providing input on video concepts and storytelling approaches."
+      "Proficient in Adobe Premiere Pro, After Effects, and DaVinci Resolve.",
+      "Collaborated with content creators, brands, and marketing teams to deliver engaging and high-quality video edits.",
+      "Specialized in storytelling, motion graphics, color grading, seamless transitions, and audio-video synchronization."
+    ]
+  },
+  {
+    id: 3,
+    role: "Junior Designer",
+    company: "Digital Creatives Inc.",
+    period: "2017 – 2019",
+    description: "Designed digital assets for websites, social media, and marketing campaigns under senior guidance.",
+    achievements: [
+      "Contributed to an award-winning campaign for a major sportswear brand.",
+      "Developed skills in motion graphics and animation.",
+      "Helped establish brand guidelines for over 10 clients."
     ]
   }
-  // {
-  //   id: 3,
-  //   role: "Junior Designer",
-  //   company: "Digital Creatives Inc.",
-  //   period: "2017 - 2019",
-  //   description: "Created digital assets for websites, social media, and marketing campaigns under the guidance of senior design team.",
-  //   achievements: [
-  //     "Contributed to award-winning campaign for major sportswear brand",
-  //     "Developed skills in motion graphics and animation",
-  //     "Assisted in developing brand guidelines for 10+ clients"
-  //   ]
-  // }
 ];
 
 export const skills = [
