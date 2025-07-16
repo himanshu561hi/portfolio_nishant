@@ -1,13 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-// IMPROVEMENT: Imported consistent icons from Lucide
-import { Mail, Phone, MapPin, Send, Instagram, Linkedin, Loader2 } from 'lucide-react';
-// Note: useToast is a custom hook, assuming it's defined elsewhere in your project.
-// To make this component self-contained, we'll mock it if it's not available.
-const useToast = () => ({ toast: (options) => console.log('Toast:', options) });
+import { Mail, Phone, MapPin, Send, Instagram, Linkedin, Loader2, Clock } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/components/ui/use-toast";
 
 
-// Reusable component for contact info items for cleaner code
+// Reusable component for contact info items
 const InfoItem = ({ icon, label, value, href }) => (
   <a
     href={href}
@@ -36,31 +34,53 @@ const WhatsAppIcon = () => (
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
+  const form = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const [isCoolingDown, setIsCoolingDown] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!form.current) {
+      console.error("Form ref is not attached to the element.");
+      toast({
+        title: "Application Error",
+        description: "Could not submit the form. Please refresh the page.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message sent!",
-        description: "Thank you for contacting me. I'll get back to you shortly.",
+    emailjs.sendForm(
+      'service_h6roymp',      // <-- Replace with your Service ID
+      'template_4ep654r',     // <-- Replace with your Template ID
+      form.current,
+      'zVGw6BfSCK-1SLOV9'       // <-- Replace with your Public Key
+    )
+      .then((result) => {
+        console.log('SUCCESS!', result.text);
+        toast({
+          title: "Message sent!",
+          description: "Thank you for contacting me. I'll get back to you shortly.",
+        });
+        form.current.reset();
+        // FIX: Start the cooldown period after a successful submission
+        setIsCoolingDown(true);
+        setTimeout(() => {
+          setIsCoolingDown(false);
+        }, 60000); // 60-second cooldown
+      }, (error) => {
+        console.log('FAILED...', error.text);
+        toast({
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem sending your message. Please try again.",
+          variant: "destructive",
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1500);
   };
 
   const whatsappNumber = "918700952742";
@@ -84,8 +104,6 @@ const ContactSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
-
-          {/* --- Contact Info (Left Side) --- */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -96,45 +114,21 @@ const ContactSection = () => {
             <div>
               <h3 className="text-xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
-                <InfoItem
-                  icon={<Mail className="text-primary" size={20} />}
-                  label="Email"
-                  value="rnishant5656@gmail.com"
-                  href="mailto:rnishant5656@gmail.com"
-                />
-                <InfoItem
-                  icon={<Phone className="text-primary" size={20} />}
-                  label="Phone"
-                  value="+91 8700952742"
-                  href="tel:+918700952742"
-                />
-                <InfoItem
-                  icon={<MapPin className="text-primary" size={20} />}
-                  label="Location"
-                  value="Ghaziabad, India"
-                  href="https://www.google.com/maps/place/Ghaziabad,+Uttar+Pradesh"
-                />
+                <InfoItem icon={<Mail className="text-primary" size={20} />} label="Email" value="rnishant5656@gmail.com" href="mailto:rnishant5656@gmail.com" />
+                <InfoItem icon={<Phone className="text-primary" size={20} />} label="Phone" value="+91 8700952742" href="tel:+918700952742" />
+                <InfoItem icon={<MapPin className="text-primary" size={20} />} label="Location" value="Ghaziabad, India" href="https://www.google.com/maps/place/Ghaziabad,+Uttar+Pradesh" />
               </div>
             </div>
-
             <div>
               <h3 className="text-xl font-bold mb-6">Follow Me</h3>
               <div className="flex space-x-4">
-                <a href="https://www.instagram.com/the_ed1tz/" target="_blank" rel="noopener noreferrer" className="bg-background rounded-full p-3 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110">
-                  <Instagram size={20} />
-                </a>
-                <a href="https://www.linkedin.com/in/nishant-gupta-11747b247/" target="_blank" rel="noopener noreferrer" className="bg-background rounded-full p-3 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110">
-                  <Linkedin size={20} />
-                </a>
-                {/* --- ADDED: WhatsApp Icon --- */}
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="bg-background rounded-full p-3 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110">
-                  <WhatsAppIcon />
-                </a>
+                <a href="https://www.instagram.com/the_ed1tz/" target="_blank" rel="noopener noreferrer" className="bg-background rounded-full p-3 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110"><Instagram size={20} /></a>
+                <a href="https://www.linkedin.com/in/nishant-gupta-11747b247/" target="_blank" rel="noopener noreferrer" className="bg-background rounded-full p-3 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110"><Linkedin size={20} /></a>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="bg-background rounded-full p-3 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-110"><WhatsAppIcon /></a>
               </div>
             </div>
           </motion.div>
 
-          {/* --- Contact Form (Right Side) --- */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -142,39 +136,33 @@ const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="lg:col-span-2"
           >
-            <form onSubmit={handleSubmit} className="bg-muted/40 rounded-xl p-6 lg:p-8">
+            <form ref={form} onSubmit={handleSubmit} className="bg-muted/40 rounded-xl p-6 lg:p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
-                  <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/50" required />
+                  <input type="text" id="name" name="name" className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/50" required />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">Your Email</label>
-                  <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/50" required />
+                  <input type="email" id="email" name="email" className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/50" required />
                 </div>
               </div>
-
               <div className="mb-6">
                 <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
-                <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/50" required />
+                <input type="text" id="subject" name="subject" className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/50" required />
               </div>
-
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium mb-2">Your Message</label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/50" rows={5} required ></textarea>
+                <textarea id="message" name="message" rows={5} className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/50" required ></textarea>
               </div>
-
-              <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 px-8 rounded-lg transition-colors flex items-center justify-center disabled:bg-primary/70">
+              {/* FIX: Updated button state to handle cooldown */}
+              <button type="submit" disabled={isSubmitting || isCoolingDown} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 px-8 rounded-lg transition-colors flex items-center justify-center disabled:bg-primary/70 disabled:cursor-not-allowed">
                 {isSubmitting ? (
-                  <span className="flex items-center">
-                    <Loader2 className="animate-spin mr-2" size={18} />
-                    Sending...
-                  </span>
+                  <span className="flex items-center"><Loader2 className="animate-spin mr-2" size={18} />Sending...</span>
+                ) : isCoolingDown ? (
+                  <span className="flex items-center"><Clock className="mr-2" size={18} />Wait to send again</span>
                 ) : (
-                  <span className="flex items-center">
-                    <Send className="mr-2" size={18} />
-                    Send Message
-                  </span>
+                  <span className="flex items-center"><Send className="mr-2" size={18} />Send Message</span>
                 )}
               </button>
             </form>
@@ -185,4 +173,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection
+export default ContactSection;
