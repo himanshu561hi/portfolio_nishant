@@ -32,9 +32,16 @@ const Hero = () => {
           // scene="https://prod.spline.design/MhpSipoamih6gdbT/scene.splinecode"
           // scene="https://prod.spline.design/wHzWZir0fmaOaJoM/scene.splinecode"
           // scene="https://prod.spline.design/PRYWad20RSfwyiou/scene.splinecode"
-          scene="https://prod.spline.design/i0EBOgDmlMfLP1hr/scene.splinecode"
+          // scene="https://prod.spline.design/i0EBOgDmlMfLP1hr/scene.splinecode"
           // scene="https://prod.spline.design/Wy-AlNIJ6NEID7Rg/scene.splinecode"
           // scene="https://prod.spline.design/LCFi7Vcix8fYpvLD/scene.splinecode"
+          // scene="https://prod.spline.design/07vHREb3YV4dmkAb/scene.splinecode"
+          // scene="https://prod.spline.design/Qn3EJo6l7zdiWtq0/scene.splinecode"
+          // scene="https://prod.spline.design/UCGzBMvZEDg56Ghx/scene.splinecode"
+          // scene="https://prod.spline.design/CodmehHNAhpXJ9HK/scene.splinecode"
+          // scene="https://prod.spline.design/E0IlqsipyQce4Cxf/scene.splinecode"
+          scene="https://prod.spline.design/BtmQCqJpWk5TObDr/scene.splinecode"
+          // scene="https://prod.spline.design/BddrbWYh6uKIrRZP/scene.splinecode"
 
 
         />
