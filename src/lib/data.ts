@@ -2,68 +2,58 @@ export const projects = [
   {
     id: 1,
     title: "How Alex Hormozi Beat the Algorithm 🤯",
-    description:
-      "Alex Hormozi is dominating social media algorithms by consistently pushing high-volume content. Here’s my breakdown of his strategy—and how you can do it too.",
+    description: "Alex Hormozi is dominating social media algorithms by consistently pushing high-volume content. Here’s my breakdown of his strategy—and how you can do it too.",
     category: "Video Editing",
     image: "/public/project images/aden-editz-best.png",
     tags: ["Branding", "Logo Design", "Typography"],
-    driveLink:
-      "https://drive.google.com/file/d/1ncQCjfm93NRhCvEHGLgBGr18Nvy_kd1_/view?usp=drive_link",
+    driveLink: "https://drive.google.com/file/d/1ncQCjfm93NRhCvEHGLgBGr18Nvy_kd1_/view?usp=drive_link",
   },
   {
     id: 2,
     title: "How Thin Air Became India’s Most Valuable Real Estate 💰",
-    description:
-      "Thin air is being treated like a tradable asset—legally. Here's how this overlooked loophole is turning into a financial opportunity.",
+    description: "Thin air is being treated like a tradable asset—legally. Here's how this overlooked loophole is turning into a financial opportunity.",
     category: "Video Editing",
     image: "/public/project images/Finflow.png",
     tags: ["Video Editing", "Motion Graphics", "Sound Design"],
-    driveLink:
-      "https://drive.google.com/file/d/10bW7lmv-ZNCcJxUxF9rEU70VlVbYK4wb/view?usp=drive_link",
+    driveLink: "https://drive.google.com/file/d/10bW7lmv-ZNCcJxUxF9rEU70VlVbYK4wb/view?usp=drive_link",
   },
   {
     id: 3,
     title: "Why Creators Are Launching Businesses Instead of Relying on Brand Deals",
-    description:
-      "More creators are shifting from brand deals to launching their own businesses. This project explains the reasoning and the real monetization strategies behind it.",
-    category: "Video Editing",
+    description: "More creators are shifting from brand deals to launching their own businesses. This project explains the reasoning and the real monetization strategies behind it.",
+    // UPDATED: Category changed to match tags
+    category: "UI/UX",
     image: "/public/project images/1.png",
     tags: ["UI Design", "UX", "E-commerce"],
-    driveLink:
-      "https://drive.google.com/file/d/19PjtFAlXT9QIh5CZ22iOt33PUz-SNFsE/view?usp=drive_link",
+    driveLink: "https://drive.google.com/file/d/19PjtFAlXT9QIh5CZ22iOt33PUz-SNFsE/view?usp=drive_link",
   },
   {
     id: 4,
     title: "Is Airbnb a Truly Passive Business? 🏠",
-    description:
-      "Managing an Airbnb might sound easy, but it's not always hands-off. This documentary-style edit explores how automation can help make it passive.",
+    description: "Managing an Airbnb might sound easy, but it's not always hands-off. This documentary-style edit explores how automation can help make it passive.",
     category: "Video Editing",
     image: "/public/project images/Ascogent-final-sample.png",
     tags: ["Video Editing", "Color Grading", "Documentary"],
-    driveLink:
-      "https://drive.google.com/file/d/1gcGpET5fyVabht414AmI_tjEtfCMIDGt/view?usp=sharing",
+    driveLink: "https://drive.google.com/file/d/1gcGpET5fyVabht414AmI_tjEtfCMIDGt/view?usp=sharing",
   },
   {
     id: 5,
     title: "Why Your Audience Doesn’t Care About Every Scientific Detail 🤔",
-    description:
-      "Effective communication is all about clarity and impact. This project breaks down why simplifying complex ideas is more powerful than overloading with details.",
-    category: "Content Strategy",
+    description: "Effective communication is all about clarity and impact. This project breaks down why simplifying complex ideas is more powerful than overloading with details.",
+    // UPDATED: Was "Content Strategy", changed to "Graphic Design"
+    category: "Graphic Design",
     image: "/public/project images/luis-final.png",
     tags: ["Social Media", "Graphic Design", "Campaign"],
-    driveLink:
-      "https://drive.google.com/file/d/10hBvdutEw4gTXX2sPjQby3w3wDsXhflc/view?usp=sharing",
+    driveLink: "https://drive.google.com/file/d/10hBvdutEw4gTXX2sPjQby3w3wDsXhflc/view?usp=sharing",
   },
   {
     id: 6,
     title: "3 Trading Books Every Trader Should Read",
-    description:
-      "Created a set of training and promotional videos with consistent branding, aimed at financial education and audience engagement.",
+    description: "Created a set of training and promotional videos with consistent branding, aimed at financial education and audience engagement.",
     category: "Video Editing",
     image: "/public/project images/new-trade-3rd-final.png",
     tags: ["Corporate Video", "Training", "Promotional"],
-    driveLink:
-      "https://drive.google.com/file/d/11yuvwSRhB13q-VRFZdV_zBHJhm6WfDmH/view?usp=sharing",
+    driveLink: "https://drive.google.com/file/d/11yuvwSRhB13q-VRFZdV_zBHJhm6WfDmH/view?usp=sharing",
   },
 ];
 

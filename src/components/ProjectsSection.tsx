@@ -1,25 +1,25 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-// REMOVED: Unused imports like useEffect, AnimatePresence, X icon
 import { projects } from '@/lib/data';
 import ProjectCard from './ProjectCard';
 
-// REMOVED: The entire ProjectModal component is gone.
-
 const ProjectsSection = () => {
   const [filter, setFilter] = useState('All');
-  // REMOVED: The `selectedProject` state is no longer needed.
 
-  const categories = ['All', 'Graphic Design', 'Video Editing', 'UI/UX'];
+  // FIX: Dynamically generate categories from the projects data.
+  // 1. Get all project categories.
+  // 2. Create a Set to get only the unique values.
+  // 3. Spread the Set back into an array and add "All" at the beginning.
+  const categories = ['All', ...new Set(projects.map((project) => project.category))];
 
-  const filteredProjects = filter === 'All'
-    ? projects
-    : projects.filter(project => project.category === filter);
+  const filteredProjects =
+    filter === 'All'
+      ? projects
+      : projects.filter((project) => project.category === filter);
 
   return (
     <section id="projects" className="py-20 sm:py-28 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* ... (The title and filter buttons section remains the same) ... */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,17 +44,17 @@ const ProjectsSection = () => {
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${filter === category
-                ? 'bg-primary text-primary-foreground shadow-md'
-                : 'bg-background hover:bg-muted/80'
-                }`}
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
+                filter === category
+                  ? 'bg-primary text-primary-foreground shadow-md'
+                  : 'bg-background hover:bg-muted/80'
+              }`}
             >
               {category}
             </button>
           ))}
         </motion.div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -64,13 +64,11 @@ const ProjectsSection = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* FIX: No longer needs the onViewDetails prop. */}
               <ProjectCard project={project} />
             </motion.div>
           ))}
         </div>
 
-        {/* "View All" Button */}
         <div className="flex justify-center mt-12">
           <a
             href="https://drive.google.com/drive/folders/1q4UwiD_qPbhZeH5xzWjXA17njw3LD4xD"
@@ -81,8 +79,6 @@ const ProjectsSection = () => {
             View All Projects
           </a>
         </div>
-
-        {/* REMOVED: The entire AnimatePresence and modal rendering block is gone. */}
       </div>
     </section>
   );
