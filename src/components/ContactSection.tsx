@@ -53,10 +53,10 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     emailjs.sendForm(
-      'service_h6roymp',      // <-- Replace with your Service ID
-      'template_4ep654r',     // <-- Replace with your Template ID
+      'service_zi1ch8o',      // <-- Replace with your Service ID
+      'template_6t4aah4',     // <-- Replace with your Template ID
       form.current,
-      'zVGw6BfSCK-1SLOV9'       // <-- Replace with your Public Key
+      'qYnBnRsZicdXdGtp1'       // <-- Replace with your Public Key
     )
       .then((result) => {
         console.log('SUCCESS!', result.text);
