@@ -33,7 +33,7 @@ const ProjectsSection = () => {
           </p>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ const ProjectsSection = () => {
               {category}
             </button>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
