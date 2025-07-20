@@ -114,7 +114,7 @@ const ContactSection = () => {
             <div>
               <h3 className="text-xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
-                <InfoItem icon={<Mail className="text-primary" size={20} />} label="Email" value="rnishant5656@gmail.com" href="mailto:rnishant5656@gmail.com" />
+                <InfoItem icon={<Mail className="text-primary" size={20} />} label="Email" value="001xzmedia@gmail.com" href="mailto:001xzmedia@gmail.com" />
                 <InfoItem icon={<Phone className="text-primary" size={20} />} label="Phone" value="+91 8700952742" href="tel:+918700952742" />
                 <InfoItem icon={<MapPin className="text-primary" size={20} />} label="Location" value="Ghaziabad, India" href="https://www.google.com/maps/place/Ghaziabad,+Uttar+Pradesh" />
               </div>
