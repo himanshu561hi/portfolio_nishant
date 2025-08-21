@@ -6,7 +6,7 @@ export const projects = [
     category: "Video Editing",
     image: "/project images/aden-editz-best.png",
     tags: ["Branding", "Logo Design", "Typography"],
-    driveLink: "https://drive.google.com/file/d/1ncQCjfm93NRhCvEHGLgBGr18Nvy_kd1_/view?usp=drive_link",
+    driveLink: "https://drive.google.com/file/d/1DYEecQKX0dyKafflz0II4LuqiGNCHQhL/view?usp=drive_link",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const projects = [
     category: "Graphic Design",
     image: "/project images/luis-final.png",
     tags: ["Social Media", "Graphic Design", "Campaign"],
-    driveLink: "https://drive.google.com/file/d/10hBvdutEw4gTXX2sPjQby3w3wDsXhflc/view?usp=sharing",
+    driveLink: "https://drive.google.com/file/d/1yJ52qrN0AaATRdL7yGKsoRDEnALkWfWy/view?usp=sharing",
   },
   {
     id: 6,
