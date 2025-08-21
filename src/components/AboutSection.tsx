@@ -53,7 +53,7 @@ const AboutSection = () => {
               <StatCard
                 icon={<Briefcase size={20} className="text-primary mr-2" />}
                 title="Experience"
-                value="6+ Years"
+                value="5+ Years"
                 subtext="Professional Work"
               />
               <StatCard
