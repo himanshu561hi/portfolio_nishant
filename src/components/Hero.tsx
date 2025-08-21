@@ -69,13 +69,16 @@ const Hero = () => {
             variants={itemVariants}
             className="lg:w-1/2 flex justify-center order-1 lg:order-2"
           >
-            {/* <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20">
+            <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20">
               <img
-                src="/nishant.jpeg"
+                // src="/nishant.jpeg"
+                // src="/nishant1.png"
+                // src="/nishant2.png"
+                src="/nishant3.png"
                 alt="A portrait of Nishant, the video editor"
                 className="w-full h-full object-cover"
               />
-            </div> */}
+            </div>
           </motion.div>
         </motion.div>
       </div>
